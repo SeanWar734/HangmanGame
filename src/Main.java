@@ -10,6 +10,7 @@ public class Main {
 
 		System.out.println("Hello " + name + " what difficulty would you like?");
 		String hangmanWord = Methods.whichDifficulty();
+		String[] hangmanWordArray = hangmanWord.split("");
 		System.out.println(hangmanWord);
 		
 	
@@ -26,7 +27,12 @@ public class Main {
 			if (userchoice.equals("quit")) {
 				System.exit(0);
 			} else {
-				char checkThisNum = userchoice.charAt(0);
+				char checkThischar = userchoice.charAt(0);
+
+				for (int i = 0; i < hangmanWordArray.length; i++) {
+					if (hangmanWordArray[i].equals(checkThischar))
+						;
+				}
 
 				// check to see if letter is in hangmanWord
 				// print board
