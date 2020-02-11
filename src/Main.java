@@ -11,6 +11,10 @@ public class Main {
 		String hangmanWord = Methods.whichDifficulty();
 		System.out.println(hangmanWord);
 		
+	
 	}
+	
+	
+	
 
 }

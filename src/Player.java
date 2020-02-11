@@ -19,7 +19,7 @@ public class Player {
 		wins = 0;
 		losses = 0;
 		pin = 0; 
-		String[] data ;
+		data = null;
 	}
 //GETTERS SETTERS
 	public String getName() {
@@ -46,12 +46,13 @@ public class Player {
 	public void setPin(int pin) {
 		this.pin = pin;
 	}
+//DATA IS FOR LEADERBOARD PRINTING
 	public String getData() {
 		return data.toString();
 	}
 	public void setData(Player player) {
 		String info = player.toString();
-		
+		String[] data = info.split(" ");
 		this.data = data;
 	}
 	

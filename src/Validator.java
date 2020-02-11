@@ -6,6 +6,45 @@ import java.util.*;
 
 public class Validator {
 
+	
+	
+//GET DIFFICULTY 
+	public static String getDifficulty(Scanner scnr,String prompt) {
+		String input = "";
+		do {
+			input = getString(scnr, "");
+			if(input.equalsIgnoreCase("EASY")||input.equalsIgnoreCase("MEDIUM")||input.equalsIgnoreCase("HARD")) {
+				break;
+			}else {
+				System.out.println("\nPlease enter \"EASY,\" \"MEDIUM,\" or \"HARD\"\n");
+				continue;
+			}
+			
+		}while(true);
+		
+		return input;
+	}
+	
+	
+	
+//GET USER PIN
+	public static String getPin(Scanner scnr,String prompt) {
+		String input;
+		String regex = "\\d\\d\\d\\d";
+		do {
+			input = getString(scnr, "");
+			if(input.matches(regex)) {
+				break;
+			}else {
+				System.out.println("\nPlease\n");
+				continue;
+			}
+			
+		}while(true);
+		
+		return input;
+	}
+
 
 
 //GET AN INTEGER
