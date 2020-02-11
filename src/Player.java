@@ -9,7 +9,7 @@ public class Player {
 	private int wins;
 	private int losses;
 	private int pin;
-	
+	private String[] data;
 //CONSTRUCTORS
 	public Player() {
 		
@@ -18,7 +18,8 @@ public class Player {
 		this.name = name;
 		wins = 0;
 		losses = 0;
-		pin = 0;
+		pin = 0; 
+		String[] data ;
 	}
 //GETTERS SETTERS
 	public String getName() {
@@ -45,7 +46,22 @@ public class Player {
 	public void setPin(int pin) {
 		this.pin = pin;
 	}
+	public String getData() {
+		return data.toString();
+	}
+	public void setData(Player player) {
+		String info = player.toString();
+		
+		this.data = data;
+	}
 	
+	
+	
+	//TOSTRING
+	@Override
+	public String toString() {
+		return String.format("%d %d %s", wins,losses,name); 
+	}
 	
 	
 	
