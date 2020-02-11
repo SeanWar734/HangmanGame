@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Methods {
 
-	public static String whichDifficulty() {
+	public static  String whichDifficulty() {
 
 		Scanner scnr = new Scanner(System.in);
 		String choice = scnr.next();
