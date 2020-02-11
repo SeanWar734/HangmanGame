@@ -11,6 +11,13 @@ public class Main {
 		System.out.println("Hello " + name + " what difficulty would you like?");
 		String hangmanWord = Methods.whichDifficulty();
 		String[] hangmanWordArray = hangmanWord.split("");
+		
+		String[] underscoreArray = new String[hangmanWord.length()];
+		
+		for (int i = 0; i < hangmanWord.length(); i ++) {
+			underscoreArray[i] = "_";
+		}
+		
 		System.out.println(hangmanWord);
 		
 	
@@ -25,13 +32,15 @@ public class Main {
 
 			String userchoice = scnr.next().toLowerCase();
 			if (userchoice.equals("quit")) {
+				//todo
 				System.exit(0);
 			} else {
-				char checkThischar = userchoice.charAt(0);
+				String checkThischar = userchoice.substring(0);
 
 				for (int i = 0; i < hangmanWordArray.length; i++) {
-					if (hangmanWordArray[i].equals(checkThischar))
-						;
+					if (hangmanWordArray[i].equals(checkThischar)) {
+						underscoreArray[i] = checkThischar.substring(i);
+					}
 				}
 
 				// check to see if letter is in hangmanWord
@@ -39,13 +48,15 @@ public class Main {
 
 				// if all letters are checked, set lettersAreDone to true
 			}
-
+			for (int i = 0; i < underscoreArray.length; i ++) {
+				System.out.print(underscoreArray[i] + " ");
+			}
+			System.out.println();
 //			if (lettersAreDone) {
 //				win = true;
 //			}
 
 			// add playerscore to highscore
-			System.out.println("Good Game!");
 			// show highscore method
 
 		}
