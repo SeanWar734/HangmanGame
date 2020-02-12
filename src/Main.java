@@ -28,27 +28,22 @@ public class Main {
 
 			String userchoice = scnr.next().toLowerCase();
 			if (userchoice.equals("quit")) {
-				// todo
-				System.exit(0);
+				win = true;
 			} else {
 				String checkThischar = userchoice.substring(0);
 				int goodLetters = 0;
-				if (goodLetters < hangmanWordArray.length) {
-					for (int i = 0; i < hangmanWordArray.length; i++) {
-						if (hangmanWordArray[i].equals(checkThischar)) {
-							underscoreArray[i] = hangmanWordArray[i];
-							goodLetters++;
+				for (int i = 0; i < hangmanWordArray.length; i++) {
+					if (hangmanWordArray[i].equals(checkThischar)) {
+						underscoreArray[i] = hangmanWordArray[i];
+						goodLetters++;
+						if (goodLetters >= hangmanWordArray.length) {
+							win = true;
 						}
+
 					}
-				} else {
-					win = true;
-					System.out.println("Good Job!");
 				}
+				
 
-				// check to see if letter is in hangmanWord
-				// print board
-
-				// if all letters are checked, set lettersAreDone to true
 			}
 			for (int i = 0; i < underscoreArray.length; i++) {
 				System.out.print(underscoreArray[i] + " ");
