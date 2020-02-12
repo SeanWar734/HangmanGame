@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.lang.Comparable;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Methods {
+public class Methods implements Comparator{
 
 	public static  String whichDifficulty() {
 
@@ -73,11 +78,18 @@ public class Methods {
 
 	
 	
-	public static void addMap(Map<Integer,Player> players, Player player) {
+	public static void organizeList(List<Player> players, Player player) {
+		Comparator.comparing(player, player.getWins());
+//		int wins = players.get(0).getWins();
+//		for(int i = 1; i < players.size(); ++i) {
+//			wins = players.get(i).getWins();
+//			for(int j = 1; j < players.size(); ++j) {
+//			if(wins <)	
+//			}
+//		}
 		
-		players.put(players.size()+1,player);
 	}
 	
-	
+	 
 	
 }
