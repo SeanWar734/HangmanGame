@@ -84,4 +84,11 @@ public class Methods {
 		System.out.println();
 	}
 
+	
+	public static void addMap(Map<Integer,Player> players, Player player) {
+		
+		players.put(players.size()+1,player);
+	}
+	
+
 }
