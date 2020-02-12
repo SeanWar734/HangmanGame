@@ -29,6 +29,7 @@ public class Main {
 			String userchoice = scnr.next().toLowerCase();
 			if (userchoice.equals("quit")) {
 				win = true;
+				break;
 			} else {
 				String checkThischar = userchoice.substring(0);
 				int goodLetters = 0;
@@ -39,24 +40,19 @@ public class Main {
 						if (goodLetters >= hangmanWordArray.length) {
 							win = true;
 						}
-
 					}
 				}
-				
-
 			}
+
 			for (int i = 0; i < underscoreArray.length; i++) {
 				System.out.print(underscoreArray[i] + " ");
 			}
 			System.out.println();
-//			if (lettersAreDone) {
-//				win = true;
-//			}
-
-			// add playerscore to highscore
-			// show highscore method
 
 		}
+
+		// add playerscore to highscore
+		// show highscore method
 
 	}
 }
