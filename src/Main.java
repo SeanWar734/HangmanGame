@@ -11,18 +11,14 @@ public class Main {
 		System.out.println("Hello " + name + " what difficulty would you like?");
 		String hangmanWord = Methods.whichDifficulty();
 		String[] hangmanWordArray = hangmanWord.split("");
-		
+
 		String[] underscoreArray = new String[hangmanWord.length()];
-		
-		for (int i = 0; i < hangmanWord.length(); i ++) {
+
+		for (int i = 0; i < hangmanWord.length(); i++) {
 			underscoreArray[i] = "_";
 		}
-		
+
 		System.out.println(hangmanWord);
-		
-	
-	
-	
 
 		boolean win = false;
 
@@ -32,15 +28,21 @@ public class Main {
 
 			String userchoice = scnr.next().toLowerCase();
 			if (userchoice.equals("quit")) {
-				//todo
+				// todo
 				System.exit(0);
 			} else {
 				String checkThischar = userchoice.substring(0);
-
-				for (int i = 0; i < hangmanWordArray.length; i++) {
-					if (hangmanWordArray[i].equals(checkThischar)) {
-						underscoreArray[i] = checkThischar.substring(i);
+				int goodLetters = 0;
+				if (goodLetters < hangmanWordArray.length) {
+					for (int i = 0; i < hangmanWordArray.length; i++) {
+						if (hangmanWordArray[i].equals(checkThischar)) {
+							underscoreArray[i] = hangmanWordArray[i];
+							goodLetters++;
+						}
 					}
+				} else {
+					win = true;
+					System.out.println("Good Job!");
 				}
 
 				// check to see if letter is in hangmanWord
@@ -48,7 +50,7 @@ public class Main {
 
 				// if all letters are checked, set lettersAreDone to true
 			}
-			for (int i = 0; i < underscoreArray.length; i ++) {
+			for (int i = 0; i < underscoreArray.length; i++) {
 				System.out.print(underscoreArray[i] + " ");
 			}
 			System.out.println();
