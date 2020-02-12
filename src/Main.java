@@ -7,6 +7,7 @@ public class Main {
 		Scanner scnr = new Scanner(System.in);
 
 		String name = Validator.getString(scnr, "Please input your name ");
+		Player newPlayer = new Player(name);
 		System.out.println("Hello " + name + " what difficulty would you like?");
 
 		String hangmanWord = Methods.whichDifficulty();
@@ -32,8 +33,7 @@ public class Main {
 
 		// Starting the main game loop
 
-		int correct = 0;
-		int wrong = 0;
+		
 
 		while (!win) {
 
@@ -54,6 +54,31 @@ public class Main {
 			}
 
 			underscoreArray = Methods.checkLetter(checkThischar, hangmanWordArray, underscoreArray);
+			
+			switch (newPlayer.getLosses()) {
+			case 0:
+				HangPerson.begin();
+				break;
+			case 1:
+				
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				
+				break;
+			case 4:
+				
+				break;
+			case 5:
+				
+				break;
+			case 6:
+				HangPerson.gameOver();
+				break;
+			}
+			
 			Methods.printArray(underscoreArray);
 			System.out.println("Number wrong: " + wrong);
 			System.out.println("Number right: " + correct);
