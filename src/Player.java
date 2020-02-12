@@ -16,7 +16,6 @@ public class Player {
 		
 	}
 	public Player(String name) {
-		super();
 		this.name = name;
 		wins = 0;
 		losses = 0;

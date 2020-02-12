@@ -73,9 +73,9 @@ public class Methods {
 
 	
 	
-	public static void setPlayerMap(Map<Integer,Player> players, Player player) {
+	public static void addMap(Map<Integer,Player> players, Player player) {
 		
-		players.put(players.put(player);
+		players.put(players.size()+1,player);
 	}
 	
 	
