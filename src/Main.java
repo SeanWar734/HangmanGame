@@ -7,7 +7,9 @@ public class Main {
 		Scanner scnr = new Scanner(System.in);
 
 		String name = Validator.getString(scnr, "Please input your name ");
+		int goodLetters = 0;
 
+		
 		System.out.println("Hello " + name + " what difficulty would you like?");
 		String hangmanWord = Methods.whichDifficulty();
 		String[] hangmanWordArray = hangmanWord.split("");
@@ -21,25 +23,29 @@ public class Main {
 		System.out.println(hangmanWord);
 
 		boolean win = false;
-
+		
+		System.out.println("Please choose which letter you want to try, or \"quit\" to quit.");
+		String userchoice = scnr.next().toLowerCase();
+		
 		while (!win) {
 			// prompt what letter they want to try
-			System.out.println("Please choose which letter you want to try, or \"quit\" to quit.");
-
-			String userchoice = scnr.next().toLowerCase();
+			
+			
 			if (userchoice.equals("quit")) {
 				win = true;
 				break;
 			} else {
 				String checkThischar = userchoice.substring(0);
-				int goodLetters = 0;
+				
+				if (goodLetters >= hangmanWordArray.length) {
+					win = true;
+				}
+				
 				for (int i = 0; i < hangmanWordArray.length; i++) {
 					if (hangmanWordArray[i].equals(checkThischar)) {
 						underscoreArray[i] = hangmanWordArray[i];
 						goodLetters++;
-						if (goodLetters >= hangmanWordArray.length) {
-							win = true;
-						}
+						
 					}
 				}
 			}
