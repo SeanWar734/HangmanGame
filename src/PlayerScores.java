@@ -1,5 +1,5 @@
 		
-		public class HighScores {
+		public class PlayerScores {
 		    public static void main(String args[])
 		        throws InterruptedException {
 	            
