@@ -9,8 +9,8 @@ public class PlayerLineConverter implements LineConverter<Player> {
 	public Player fromLine(String line) {
 		String[] parts = line.split("\t");
 		String name = parts[0];
-		int wins = parts[1];
-		int losses = parts[2];
+		int wins = Integer.parseInt(parts[1]);
+		int losses = Integer.parseInt(parts[2]);
 		return new Player(name, wins, losses);
 	}
 

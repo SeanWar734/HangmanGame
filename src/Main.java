@@ -1,8 +1,18 @@
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
+	private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
+
 	public static void main(String[] arg) {
+
+		List<Player> player = fileHelper.readAll();
+
+		fileHelper.rewrite(Arrays.asList(new Player("Jill", 462, 0)));
+		fileHelper.append(new Player("Bill", 6, 2));
+		fileHelper.append(new Player("Sean", 42, 999));
 
 		Scanner scnr = new Scanner(System.in);
 
@@ -18,11 +28,11 @@ public class Main {
 			underscoreArray[i] = "_";
 		}
 
-		System.out.println(hangmanWord);
-
 		// priming the loop
 		boolean win = false;
-		
+
+		HangPerson.start();
+
 		// print out the underscore array
 		for (int i = 0; i < underscoreArray.length; i++) {
 			System.out.print(underscoreArray[i] + " ");
@@ -30,7 +40,6 @@ public class Main {
 		System.out.println();
 
 		int numLetters = underscoreArray.length;
-
 		// Starting the main game loop
 		while (!win) {
 
@@ -96,15 +105,13 @@ public class Main {
 			}
 
 		}
-
+		
+		fileHelper.append(newPlayer);
 		System.out.println("We made it to the end");
-		
-		
-		
+
 		// add playerscore to highscore
 		// show highscore method
 		scnr.close();
 	}
-	
-	
+
 }
