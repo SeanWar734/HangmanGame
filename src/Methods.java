@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Scanner;
 
 public class Methods {
@@ -70,4 +71,13 @@ public class Methods {
 		System.out.println();
 	}
 
+	
+	
+	public static void setPlayerMap(Map<Integer,Player> players, Player player) {
+		
+		players.put(players.put(player);
+	}
+	
+	
+	
 }

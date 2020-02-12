@@ -9,21 +9,36 @@ public class Player {
 	private int wins;
 	private int losses;
 	private int pin;
-	private String[] data;
+	private int correct;
+	private int wrong;
 //CONSTRUCTORS
 	public Player() {
 		
 	}
 	public Player(String name) {
+		super();
 		this.name = name;
 		wins = 0;
 		losses = 0;
 		pin = 0; 
-		data = null;
+		correct = 0;
+		wrong = 0;
 	}
 //GETTERS SETTERS
 	public String getName() {
 		return name;
+	}
+	public int getCorrect() {
+		return correct;
+	}
+	public void setCorrect(int correct) {
+		this.correct += correct;
+	}
+	public int getWrong() {
+		return wrong;
+	}
+	public void setWrong(int wrong) {
+		this.wrong += wrong;
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -47,14 +62,14 @@ public class Player {
 		this.pin = pin;
 	}
 //DATA IS FOR LEADERBOARD PRINTING
-	public String[] getData() {
-		return data;
-	}
-	public void setData(Player player) {
-		String info = player.toString();
-		String[] data = info.split(" ");
-		this.data = data;
-	}
+//	public String[] getData() {
+//		return data;
+//	}
+//	 public void setData(Player player) {
+//		String info = player.toString();
+//		String[] data = info.split(" ");
+//		this.data = data;
+//	}
 	
 	
 	
