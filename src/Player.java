@@ -47,8 +47,8 @@ public class Player {
 		this.pin = pin;
 	}
 //DATA IS FOR LEADERBOARD PRINTING
-	public String getData() {
-		return data.toString();
+	public String[] getData() {
+		return data;
 	}
 	public void setData(Player player) {
 		String info = player.toString();
