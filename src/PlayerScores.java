@@ -83,9 +83,7 @@ public class PlayerScores {
 
 		        };
 
-		        for (int i = 0;
-		             i < importantInfo.length;
-		             i++) {
+		        for (int i = 0; i < importantInfo.length; i++) {
 		            //Pause for 4 seconds
 		            Thread.sleep(300);
 		            //Print a message
