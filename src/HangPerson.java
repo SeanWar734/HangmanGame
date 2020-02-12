@@ -2,7 +2,7 @@
 public class HangPerson {
 
 	public static void main(String[] args) {
-		
+		gameOver();
 	}
 
 	
@@ -227,7 +227,7 @@ public class HangPerson {
 		  System.out.printf("%47s%52s","|","| |\n");		 
 		  System.out.printf("%47s%52s","|","| |\n");		 
 		  System.out.printf("%47s%52s","|","| |\n");		  
-		  System.out.printf("%99s","| |\n");
+		  System.out.printf("%s%99s","O","| |\n");
 		  System.out.printf("%99s","| |\n");
 		  System.out.printf("%99s","| |\n");
 		  System.out.printf("%99s","| |\n");
