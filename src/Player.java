@@ -50,7 +50,7 @@ public class Player {
 	public String[] getData() {
 		return data;
 	}
-	public void setData(Player player) {
+	 public void setData(Player player) {
 		String info = player.toString();
 		String[] data = info.split(" ");
 		this.data = data;

@@ -51,15 +51,15 @@ public class HangPerson {
 	
 	
 	public static void begin() {
-		  System.out.printf("%99s","_\n");
-		  System.out.printf("%100s","| |\n");
-		  System.out.printf("%106s","===========*|*===============================================| |======\n");
-		  System.out.printf("106","");
-		  System.out.printf("%106s","===========*|*===============================================| |======\n");
-		  System.out.printf("%48s%52s","|","| |\n");		 
-		  System.out.printf("%50s%50s","|","| |\n");		 
-		  System.out.printf("%50s%50s","|","| |\n");		 
-		  System.out.printf("%50s%50s","|","| |\n");		 
+		  System.out.printf("%98s","_\n");
+		  System.out.printf("%47s%52s","_","| |\n");
+		  System.out.printf("%106s","v============|================================================| |======v\n");
+		  System.out.printf("%34s%14s%50s%8s","|"," | ","| |","|\n");
+		  System.out.printf("%106s","^============|================================================| |======^\n");
+		  System.out.printf("%47s%52s","|","| |\n");		 
+		  System.out.printf("%47s%52s","|","| |\n");		 
+		  System.out.printf("%47s%52s","|","| |\n");		 
+		  System.out.printf("%47s%52s","|","| |\n");		  
 		  System.out.printf("%100s","| |\n");
 		  System.out.printf("%100s","|\n");
 		  System.out.printf("%100s","|\n");
