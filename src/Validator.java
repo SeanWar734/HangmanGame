@@ -6,6 +6,18 @@ import java.util.*;
 
 public class Validator {
 
+	public static String getUserName(Scanner scnr,String prompt){
+		String input = "";
+		do {
+			input = getString(scnr,"");
+			if
+			
+			
+			break;
+		}while(true);
+		
+		return input;
+	}
 	
 	
 //GET DIFFICULTY 
