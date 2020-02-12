@@ -31,10 +31,9 @@ public class Main {
 		}
 		System.out.println();
 
+		int numLetters = underscoreArray.length;
+
 		// Starting the main game loop
-
-		
-
 		while (!win) {
 
 			String userchoice = Validator.getString(scnr,
@@ -46,44 +45,55 @@ public class Main {
 				win = true;
 				break;
 			}
+			
+			Methods.checkIfLoss(userchoice, hangmanWordArray, newPlayer);
 
 			for (int i = 0; i < hangmanWordArray.length; i++) {
 				if (hangmanWordArray[i].equals(checkThischar)) {
-					correct += 1;
+					newPlayer.setCorrect(1);
 				}
 			}
 
-			underscoreArray = Methods.checkLetter(checkThischar, hangmanWordArray, underscoreArray);
-			
-			switch (newPlayer.getLosses()) {
+			underscoreArray = Methods.replaceLetter(checkThischar, hangmanWordArray, underscoreArray);
+
+			// the print out screen
+			switch (newPlayer.getWrong()) {
 			case 0:
 				HangPerson.begin();
 				break;
 			case 1:
-				
+
 				break;
 			case 2:
-				
+
 				break;
 			case 3:
-				
+
 				break;
 			case 4:
-				
+
 				break;
 			case 5:
-				
+
 				break;
 			case 6:
 				HangPerson.gameOver();
+				newPlayer.setLosses(1);
+				win = true;
 				break;
 			}
-			
+
 			Methods.printArray(underscoreArray);
-			System.out.println("Number wrong: " + wrong);
-			System.out.println("Number right: " + correct);
+			System.out.println("Number wrong: " + newPlayer.getWrong());
+			System.out.println("Number right: " + newPlayer.getCorrect());
+
+			if (newPlayer.getCorrect() >= numLetters) {
+				win = true;
+			}
 
 		}
+
+		System.out.println("We made it to the end");
 
 		// add playerscore to highscore
 		// show highscore method

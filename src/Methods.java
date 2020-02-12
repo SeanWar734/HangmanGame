@@ -1,9 +1,8 @@
-import java.util.Map;
 import java.util.Scanner;
 
 public class Methods {
 
-	public static  String whichDifficulty() {
+	public static String whichDifficulty() {
 
 		Scanner scnr = new Scanner(System.in);
 		String choice = scnr.next();
@@ -54,8 +53,22 @@ public class Methods {
 			return "singleton";
 		}
 	}
-	
-	public static String[] checkLetter(String a, String[] b, String[] c) {
+
+	public static void checkIfLoss(String a, String[] b, Player player) {
+		int x = 0;
+		for (int i = 0; i < b.length; i++) {
+			if (b[i].equals(a)) {
+				x += 1;
+			}
+		}
+
+		if (x == 0) {
+			player.setWrong(1);
+		}
+
+	}
+
+	public static String[] replaceLetter(String a, String[] b, String[] c) {
 		for (int i = 0; i < b.length; i++) {
 			if (b[i].equals(a)) {
 				c[i] = b[i];
@@ -63,7 +76,7 @@ public class Methods {
 		}
 		return c;
 	}
-	
+
 	public static void printArray(String[] a) {
 		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + " ");
@@ -71,13 +84,4 @@ public class Methods {
 		System.out.println();
 	}
 
-	
-	
-	public static void setPlayerMap(Map<Integer,Player> players, Player player) {
-		
-		players.put(players.put(player);
-	}
-	
-	
-	
 }
