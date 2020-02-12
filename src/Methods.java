@@ -53,5 +53,21 @@ public class Methods {
 			return "singleton";
 		}
 	}
+	
+	public static String[] checkLetter(String a, String[] b, String[] c) {
+		for (int i = 0; i < b.length; i++) {
+			if (b[i].equals(a)) {
+				c[i] = b[i];
+			}
+		}
+		return c;
+	}
+	
+	public static void printArray(String[] a) {
+		for (int i = 0; i < a.length; i++) {
+			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+	}
 
 }

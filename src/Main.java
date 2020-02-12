@@ -7,13 +7,10 @@ public class Main {
 		Scanner scnr = new Scanner(System.in);
 
 		String name = Validator.getString(scnr, "Please input your name ");
-		int goodLetters = 0;
-
-		
 		System.out.println("Hello " + name + " what difficulty would you like?");
+
 		String hangmanWord = Methods.whichDifficulty();
 		String[] hangmanWordArray = hangmanWord.split("");
-
 		String[] underscoreArray = new String[hangmanWord.length()];
 
 		for (int i = 0; i < hangmanWord.length(); i++) {
@@ -22,38 +19,44 @@ public class Main {
 
 		System.out.println(hangmanWord);
 
+		// initialize their first choice
+
 		boolean win = false;
-		
-		System.out.println("Please choose which letter you want to try, or \"quit\" to quit.");
-		String userchoice = scnr.next().toLowerCase();
-		
+		int goodLetters = 0;
+
+		// print out the underscore array
+		for (int i = 0; i < underscoreArray.length; i++) {
+			System.out.print(underscoreArray[i] + " ");
+		}
+		System.out.println();
+
+		// Starting the main game loop
+
+		int correct = 0;
+		int wrong = 0;
+
 		while (!win) {
-			// prompt what letter they want to try
-			
-			
+
+			String userchoice = Validator.getString(scnr,
+					"Please choose which letter you want to try, or \"quit\" to quit. ");
+			String checkThischar = userchoice.substring(0);
+
+			// catch the quit out
 			if (userchoice.equals("quit")) {
 				win = true;
 				break;
-			} else {
-				String checkThischar = userchoice.substring(0);
-				
-				if (goodLetters >= hangmanWordArray.length) {
-					win = true;
-				}
-				
-				for (int i = 0; i < hangmanWordArray.length; i++) {
-					if (hangmanWordArray[i].equals(checkThischar)) {
-						underscoreArray[i] = hangmanWordArray[i];
-						goodLetters++;
-						
-					}
+			}
+
+			for (int i = 0; i < hangmanWordArray.length; i++) {
+				if (hangmanWordArray[i].equals(checkThischar)) {
+					correct += 1;
 				}
 			}
 
-			for (int i = 0; i < underscoreArray.length; i++) {
-				System.out.print(underscoreArray[i] + " ");
-			}
-			System.out.println();
+			underscoreArray = Methods.checkLetter(checkThischar, hangmanWordArray, underscoreArray);
+			Methods.printArray(underscoreArray);
+			System.out.println("Number wrong: " + wrong);
+			System.out.println("Number right: " + correct);
 
 		}
 
