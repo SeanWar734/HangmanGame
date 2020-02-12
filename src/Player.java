@@ -21,7 +21,12 @@ public class Player {
 		correct = 0;
 		wrong = 0;
 	}
-//GETTERS SETTERS
+	public Player(String name2, int wins2, int losses2) {
+		this.name = name2;
+		this.wins = wins2;
+		this.losses = losses2;
+	}
+	//GETTERS SETTERS
 	public String getName() {
 		return name;
 	}
