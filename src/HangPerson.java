@@ -227,8 +227,8 @@ public class HangPerson {
 		  System.out.printf("%47s%52s","|","| |\n");		 
 		  System.out.printf("%47s%52s","|","| |\n");		 
 		  System.out.printf("%47s%52s","|","| |\n");		  
-		  System.out.printf("%s%99s","O","| |\n");
-		  System.out.printf("%99s","| |\n");
+		  System.out.printf("%51s%48s"," ,gPPRg, ","| |\n");
+		  System.out.printf("%45s%6s%50s","dP'","'Yb","| |\n");
 		  System.out.printf("%99s","| |\n");
 		  System.out.printf("%99s","| |\n");
 		  System.out.printf("%99s","| |\n");

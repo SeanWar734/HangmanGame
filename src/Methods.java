@@ -91,16 +91,6 @@ public class Methods{
 		System.out.println();
 	}
 
+
 	
-	
-	public static void organizeList(List<Player> players, Player player) {
-		//Comparator.comparing(player, player.getWins());
-//		int wins = players.get(0).getWins();
-//		for(int i = 1; i < players.size(); ++i) {
-//			wins = players.get(i).getWins();
-//			for(int j = 1; j < players.size(); ++j) {
-//			if(wins <)	
-//			}
-//		}
-	}
 }

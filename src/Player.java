@@ -8,7 +8,6 @@ public class Player {
 	private String name;
 	private int wins;
 	private int losses;
-	private int pin;
 	private int correct;
 	private int wrong;
 //CONSTRUCTORS
@@ -19,7 +18,6 @@ public class Player {
 		this.name = name;
 		wins = 0;
 		losses = 0;
-		pin = 0; 
 		correct = 0;
 		wrong = 0;
 	}
@@ -54,12 +52,7 @@ public class Player {
 	public void setLosses(int losses) {
 		this.losses = losses;
 	}
-	public int getPin() {
-		return pin;
-	}
-	public void setPin(int pin) {
-		this.pin = pin;
-	}
+
 //DATA IS FOR LEADERBOARD PRINTING
 //	public String[] getData() {
 //		return data;

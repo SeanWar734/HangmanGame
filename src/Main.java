@@ -59,7 +59,7 @@ public class Main {
 			// the print out screen
 			switch (newPlayer.getWrong()) {
 			case 0:
-				HangPerson.begin();
+				HangPerson.start();
 				break;
 			case 1:
 
