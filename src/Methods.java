@@ -1,13 +1,7 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.lang.Comparable;
 import java.util.List;
-import java.util.Map;
-
 import java.util.Scanner;
 
-public class Methods{
+public class Methods {
 
 	public static String whichDifficulty() {
 
@@ -91,6 +85,30 @@ public class Methods{
 		System.out.println();
 	}
 
+<<<<<<< HEAD
 
 	
+=======
+	public static void organizeList(List<Player> players, Player player) {
+		// Comparator.comparing(player, player.getWins());
+//		int wins = players.get(0).getWins();
+//		for(int i = 1; i < players.size(); ++i) {
+//			wins = players.get(i).getWins();
+//			for(int j = 1; j < players.size(); ++j) {
+//			if(wins <)	
+//			}
+//		}
+	}
+
+	public static void printHighScores(List<Player> list) {
+
+		int j = 1;
+
+		for (Player c : list) {
+			System.out.printf(j + ") %-20s | %-20d | %-20d", c.getName(), c.getWins(), c.getLosses());
+			System.out.println();
+			j++;
+		}
+	}
+>>>>>>> 6bdbf2363151b5f5e549f9b70d6b3b7a29c4741c
 }

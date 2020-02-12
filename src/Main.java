@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class Main {
 
 	private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
+	private static FileHelper<Player> easyWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
+	private static FileHelper<Player> mediumWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());	
+	private static FileHelper<Player> hardWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
+
 
 	public static void main(String[] arg) {
 
@@ -107,6 +111,7 @@ public class Main {
 		}
 		
 		fileHelper.append(newPlayer);
+		
 		System.out.println("We made it to the end");
 
 		// add playerscore to highscore
