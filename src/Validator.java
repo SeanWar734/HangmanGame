@@ -173,7 +173,7 @@ public class Validator {
 //GET CORRECT MENU NUMBER
 	public static int getMenuNum(Scanner scnr, String prompt,int min,int max) {
 		boolean isValid = false;
-		String userInput = "";
+		//String userInput = "";
 		int num = 0;
 		do {
 			//try {
