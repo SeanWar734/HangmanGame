@@ -54,7 +54,7 @@ public class Main {
 
 		Scanner scnr = new Scanner(System.in);
 
-		String name = Validator.getString(scnr, "Please input your name ");
+		String name = Validator.getUserName(scnr, " is already is use, please choose a different one", player);
 		Player newPlayer = new Player(name);
 
 		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like?");
@@ -92,7 +92,7 @@ public class Main {
 		while (!win) {
 
 			String userchoice = Validator.getString(scnr,
-					"Please choose which letter you want to try\n\"hint\" for a hint or \"quit\" to quit. ");
+					"Please choose which letter you want to try\n\"hint\" for a hint, or \"quit\" to quit. ");
 			String checkThischar = userchoice.substring(0);
 
 			// catch the quit out
