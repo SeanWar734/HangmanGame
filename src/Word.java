@@ -28,9 +28,12 @@ public class Word {
 		this.hint = hint;
 	}
 	
+	public Word() {
+		this.word = "";
+		this.hint = "";
+	}
 	
-	
-//TOSTRING
+	//TOSTRING
 	@Override
 	public String toString() {
 		return String.format("%s:%s",word,hint);

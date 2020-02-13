@@ -1,57 +1,52 @@
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class Methods {
 
-	public static String whichDifficulty() {
 
-		Scanner scnr = new Scanner(System.in);
-		String choice = scnr.next();
 
-		if (choice.equals("easy")) {
-			String easyWord = easyWord();
-			return easyWord;
+class compareWins implements Comparator<Player>{
 
-		} else if (choice.equals("medium")) {
-			String mediumWord = mediumWord();
-			return mediumWord;
-
-		} else if (choice.equals("hard")) {
-			String hardWord = hardWord();
-			return hardWord;
-
-		} else {
-			return "jazz";
-		}
+	@Override
+	public int compare(Player a, Player b) {
+		return b.getWins() - a.getWins();
+		
 	}
+	
+}
+public class Methods{
 
-	public static String easyWord() {
-		double x = Math.random() * 2;
+	public static Word easyWord(List<Word> a) {
+		double x = Math.random() * 3;
 
 		if (x <= 1) {
-			return "git";
+			return a.get(0);
+		} else if (x > 1 && x <+ 2) {
+			return a.get(1);
 		} else {
-			return "cat";
+			return a.get(2);
 		}
 	}
 
-	public static String mediumWord() {
-		double x = Math.random() * 2;
+	public static Word mediumWord(List<Word> a) {
+		double x = Math.random() * 3;
 
 		if (x >= 1) {
-			return "marker";
+			return a.get(0);
+		} else if (x > 1 && x <+ 2){
+			return a.get(1);
 		} else {
-			return "factory";
+			return a.get(2);
 		}
 	}
 
-	public static String hardWord() {
-		double x = Math.random() * 2;
+	public static Word hardWord(List<Word> a) {
+		double x = Math.random() * 3;
 
 		if (x >= 1) {
-			return "interfaces";
+			return a.get(0);
+		} else if (x > 1 && x <+ 2){
+			return a.get(1);
 		} else {
-			return "singleton";
+			return a.get(2);
 		}
 	}
 
@@ -84,16 +79,11 @@ public class Methods {
 		}
 		System.out.println();
 	}
+	
+	
 
-	public static void organizeList(List<Player> players, Player player) {
-		// Comparator.comparing(player, player.getWins());
-//		int wins = players.get(0).getWins();
-//		for(int i = 1; i < players.size(); ++i) {
-//			wins = players.get(i).getWins();
-//			for(int j = 1; j < players.size(); ++j) {
-//			if(wins <)	
-//			}
-//		}
+	public static void organizeList(List<Player> player) {
+		Collections.sort(player,new compareWins());
 	}
 
 	public static void printHighScores(List<Player> list) {
@@ -106,4 +96,6 @@ public class Methods {
 			j++;
 		}
 	}
+
+	
 }
