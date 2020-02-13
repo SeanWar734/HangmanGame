@@ -7,6 +7,23 @@ import java.util.Scanner;
 
 public class Validator {
 
+//GET DIFFICULTY	
+	public static String getEasyMedHard(Scanner scnr, String prompt) {
+		String input = "";
+		do {
+			input = getString(scnr, "");
+			if(input.equalsIgnoreCase("EASY")||input.equalsIgnoreCase("MEDIUM")||input.equalsIgnoreCase("HARD")) {
+				break;
+			}else {
+				System.out.print(prompt);
+				continue;
+			}
+		}while(true);
+		return input;
+	}
+	
+	
+	
 	public static String getUserName(Scanner scnr, String prompt, List<Player> player) {
 		String input = "";
 		boolean isTrue = true;

@@ -4,18 +4,6 @@ public class HangPerson {
 
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
-		start();
-		scnr.nextLine();
-		oneWrong();
-		scnr.nextLine();
-		twoWrong();
-		scnr.nextLine();
-		threeWrong();
-		scnr.nextLine();
-		fourWrong();
-		scnr.nextLine();
-		fiveWrong();
-		scnr.nextLine();
 		gameOver();
 		
 	}
@@ -210,8 +198,8 @@ public class HangPerson {
 		  System.out.printf("%47s%52s","|","| |\n");		  
 		  System.out.printf("%51s%48s"," ,gPPRg, ","| |\n");
 		  System.out.printf("%45s%6s%48s","dP'","'Yb","| |\n");
-		  System.out.printf("%44s%1s%3s%47s","(| ","X L X","|)","| |\n");
-		  System.out.printf("%44s%4s%3s%48s","| ","==="," |","| |\n");
+		  System.out.printf("%44s%1s%3s%47s","(| ","O L O","|)","| |\n");
+		  System.out.printf("%44s%4s%3s%48s","| "," U "," |","| |\n");
 		  System.out.printf("%50s%49s","\\_____/","| |\n");
 		  System.out.printf("%48s%51s","| |","| |\n");
 		  System.out.printf("%51s%48s","n-/---\\-n","| |\n");
@@ -264,6 +252,7 @@ public class HangPerson {
 		  System.out.printf("%99s","| |\n");
 		  System.out.printf("%99s","| |\n");
 		  System.out.printf("%99s","| |\n");
+		System.out.printf("\n\n\n%80s\n\n","GAME OVER");
 		System.out.println("================================================================================================================================================================");
 	}
 }

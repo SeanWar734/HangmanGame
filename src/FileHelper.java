@@ -74,7 +74,16 @@ public class FileHelper<T> {
 		} catch (IOException e) {
 			System.err.println("Error. Unable to write to file.");
 		}
+		
 	}
+//	public void replace(T object) {
+//		String line = lineConverter.toLine(object);
+//		try {
+//			Files.write(filePath, line, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+//		} catch (IOException e) {
+//			System.err.println("Error. Unable to write to file.");
+//		}
+//	}
 	
 	
 }
