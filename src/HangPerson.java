@@ -17,6 +17,7 @@ public class HangPerson {
 		fiveWrong();
 		scnr.nextLine();
 		gameOver();
+		scnr.close();
 		
 	}
 

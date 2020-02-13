@@ -86,7 +86,7 @@ public class Main {
 		for (int i = 0; i < hangmanWord.getWord().length(); i++) {
 			underscoreArray[i] = "_";
 		}
-
+		
 		// priming the loop
 		boolean win = false;
 
