@@ -30,7 +30,10 @@ public class Word {
 	
 	
 	
-//TOSTRING
+	public Word() {
+	}
+	
+	//TOSTRING
 	@Override
 	public String toString() {
 		return String.format("%s:%s",word,hint);

@@ -55,7 +55,7 @@ public class Player {
 		return losses;
 	}
 	public void setLosses(int losses) {
-		this.losses = losses;
+		this.losses += losses;
 	}
 
 //DATA IS FOR LEADERBOARD PRINTING
