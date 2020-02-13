@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class TitleScreen {
-	public static void main(String args[])
-		        throws InterruptedException {
+	
+	public static void titleScreen() throws InterruptedException {
 	            
 		Scanner keyboard = new Scanner(System.in);
 		

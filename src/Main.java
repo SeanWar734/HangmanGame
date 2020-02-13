@@ -54,7 +54,14 @@ public class Main {
 
 		Scanner scnr = new Scanner(System.in);
 
+		try {
+			TitleScreen.titleScreen();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
+		System.out.println("Please enter your UserName: ");
 		String name = Validator.getUserName(scnr, " is already is use, please choose a different one", player);
 
 		Player newPlayer = new Player(name);
