@@ -1,25 +1,25 @@
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
-
-
-
-class compareWins implements Comparator<Player>{
+class compareWins implements Comparator<Player> {
 
 	@Override
 	public int compare(Player a, Player b) {
 		return b.getWins() - a.getWins();
-		
+
 	}
-	
+
 }
-public class Methods{
+
+public class Methods {
 
 	public static Word easyWord(List<Word> a) {
 		double x = Math.random() * 3;
 
 		if (x <= 1) {
 			return a.get(0);
-		} else if (x > 1 && x <+ 2) {
+		} else if (x > 1 && x < +2) {
 			return a.get(1);
 		} else {
 			return a.get(2);
@@ -31,7 +31,7 @@ public class Methods{
 
 		if (x >= 1) {
 			return a.get(0);
-		} else if (x > 1 && x <+ 2){
+		} else if (x > 1 && x < +2) {
 			return a.get(1);
 		} else {
 			return a.get(2);
@@ -43,7 +43,7 @@ public class Methods{
 
 		if (x >= 1) {
 			return a.get(0);
-		} else if (x > 1 && x <+ 2){
+		} else if (x > 1 && x < +2) {
 			return a.get(1);
 		} else {
 			return a.get(2);
@@ -79,11 +79,9 @@ public class Methods{
 		}
 		System.out.println();
 	}
-	
-	
 
 	public static void organizeList(List<Player> player) {
-		Collections.sort(player,new compareWins());
+		Collections.sort(player, new compareWins());
 	}
 
 	public static void printHighScores(List<Player> list) {
@@ -97,5 +95,4 @@ public class Methods{
 		}
 	}
 
-	
 }
