@@ -33,7 +33,7 @@ public class Main {
 
 		// adding to the hard word list
 		easyWord.rewrite(Arrays.asList(new Word("primitive", "a data type"), new Word("protected", "access modifier")));
-		easyWord.append(new Word("assertion", "uploading to git up"));
+		easyWord.append(new Word("assertion", "uploading to git hub"));
 
 //FILE TEST
 //		hardWord.rewrite(hard);
