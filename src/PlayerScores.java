@@ -8,11 +8,12 @@ public class PlayerScores {
 		
 		int j = 1;
 		
-		for (int i = 0; i < 40; ++i) {
-			System.out.println(
-					"                                                                                                    ");
-
-		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		
+	
 		String importantInfo[] = {
 				"                         * * * * * * * * * * * * * THE BEST PLAYERS! * * * * * * * * * * * * *",
 				"                           RANK           NAME                                     WIN/LOSS",

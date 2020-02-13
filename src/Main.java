@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
 
@@ -80,6 +81,7 @@ public class Main {
 
 		String[] hangmanWordArray = hangmanWord.getWord().split("");
 		String[] underscoreArray = new String[hangmanWord.getWord().length()];
+		Stack<String> wrongLetter = new Stack<String>();
 
 		for (int i = 0; i < hangmanWord.getWord().length(); i++) {
 			underscoreArray[i] = "_";
@@ -117,7 +119,7 @@ public class Main {
 
 			// checks to see if the letter guessed
 			// is wrong and adds 1 to wrong
-			Methods.checkIfLoss(userchoice, hangmanWordArray, newPlayer);
+			Methods.checkIfLoss(userchoice, hangmanWordArray, newPlayer, wrongLetter);
 
 			// checks to see if the letter guessed
 			// is right and adds 1 to right
@@ -161,6 +163,7 @@ public class Main {
 			Methods.printArray(underscoreArray);
 			System.out.println("Number wrong: " + newPlayer.getWrong());
 			System.out.println("Number right: " + newPlayer.getCorrect());
+			System.out.println("Wrong letters: " + wrongLetter.toString());
 
 			if (newPlayer.getCorrect() >= numLetters) {
 				win = true;

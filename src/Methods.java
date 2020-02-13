@@ -1,6 +1,7 @@
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Stack;
 
 class compareWins implements Comparator<Player> {
 
@@ -50,7 +51,7 @@ public class Methods {
 		}
 	}
 
-	public static void checkIfLoss(String a, String[] b, Player player) {
+	public static void checkIfLoss(String a, String[] b, Player player, Stack<String> d) {
 		int x = 0;
 		for (int i = 0; i < b.length; i++) {
 			if (b[i].equals(a)) {
@@ -60,6 +61,7 @@ public class Methods {
 
 		if (x == 0) {
 			player.setWrong(1);
+			d.add(a);
 		}
 
 	}
