@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -24,7 +26,8 @@ public class Main {
 		hardWord.append(new Word("git", "Hub"));
 
 		// adding to the medium word list
-		mediumWord.rewrite(Arrays.asList(new Word("string", "words"), new Word("array", "container of objects that uses []")));
+		mediumWord.rewrite(
+				Arrays.asList(new Word("string", "words"), new Word("array", "container of objects that uses []")));
 		mediumWord.append(new Word("append", "adding to something"));
 
 		// adding to the hard word list
@@ -152,14 +155,19 @@ public class Main {
 
 			if (newPlayer.getCorrect() >= numLetters) {
 				win = true;
+				newPlayer.setWins(1);
 			}
 
 		}
 
 		fileHelper.append(newPlayer);
 
-		System.out.println("We made it to the end");
-		System.out.println();
+		try {
+			PlayerScores.highScore(player);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 		scnr.close();
 	}
 
