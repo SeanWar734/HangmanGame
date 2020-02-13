@@ -57,6 +57,9 @@ public class Player {
 	public void setLosses(int losses) {
 		this.losses = losses;
 	}
+	public static int grabWins(Player player) {
+		return player.getWins();
+	}
 
 //DATA IS FOR LEADERBOARD PRINTING
 //	public String[] getData() {

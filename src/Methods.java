@@ -1,7 +1,17 @@
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class Methods {
+
+
+class compareWins implements Comparator<Player>{
+
+	@Override
+	public int compare(Player a, Player b) {
+		return b.getWins() - a.getWins();
+		
+	}
+	
+}
+public class Methods{
 
 	public static String whichDifficulty() {
 
@@ -84,16 +94,11 @@ public class Methods {
 		}
 		System.out.println();
 	}
+	
+	
 
-	public static void organizeList(List<Player> players, Player player) {
-		// Comparator.comparing(player, player.getWins());
-//		int wins = players.get(0).getWins();
-//		for(int i = 1; i < players.size(); ++i) {
-//			wins = players.get(i).getWins();
-//			for(int j = 1; j < players.size(); ++j) {
-//			if(wins <)	
-//			}
-//		}
+	public static void organizeList(List<Player> player) {
+		Collections.sort(player,new compareWins());
 	}
 
 	public static void printHighScores(List<Player> list) {
@@ -106,4 +111,6 @@ public class Methods {
 			j++;
 		}
 	}
+
+	
 }
