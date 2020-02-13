@@ -47,7 +47,7 @@ public class Main {
 //		for (Word w : easy) {
 //			System.out.println(w);
 //		}
-//		System.out.println(hardWord.toString());
+//		System.out.println(hardWord.toString()); 
 //		System.out.println(mediumWord);
 //		System.out.println(easyWord);
 //END TEST
@@ -66,7 +66,7 @@ public class Main {
 
 		Player newPlayer = new Player(name);
 
-		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like?");
+		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like, easy, medium, or hard??");
 
 		Word hangmanWord = new Word();
 
