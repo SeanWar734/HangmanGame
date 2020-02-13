@@ -1,16 +1,12 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Main {
 
-	
 	private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
 	private static FileHelper<Word> easyWord = new FileHelper<>("src/Easy.txt", new WordLineConverter());
-	private static FileHelper<Word> mediumWord = new FileHelper<>("src/Medium.txt", new WordLineConverter());	
+	private static FileHelper<Word> mediumWord = new FileHelper<>("src/Medium.txt", new WordLineConverter());
 	private static FileHelper<Word> hardWord = new FileHelper<>("src/Hard.txt", new WordLineConverter());
-
 
 	public static void main(String[] arg) {
 
@@ -18,57 +14,64 @@ public class Main {
 		List<Word> easy = easyWord.readAll();
 		List<Word> medium = mediumWord.readAll();
 		List<Word> hard = hardWord.readAll();
-		
-		//adding to the Player score text file
+
+		// adding to the Player score text file
 		fileHelper.rewrite(Arrays.asList(new Player("Jill", 462, 0)));
 		fileHelper.append(new Player("Bill", 6, 2));
 		fileHelper.append(new Player("Sean", 42, 999));
+
+		// adding to the easy word list
+		easyWord.rewrite(Arrays.asList(new Word("hub", "HINT"), new Word("null", "HINT")));
+		easyWord.append(new Word("git", "HINT"));
 		
-		//adding to the easy word list
-		easyWord.rewrite(Arrays.asList(new Word("hub","HINT"),new Word("null","HINT")));
-		easyWord.append(new Word("git","HINT"));
-		
-		//adding to the medium word list
-		mediumWord.rewrite(Arrays.asList(new Word("string","HINT"),new Word("array","HINT")));
-		mediumWord.append(new Word("append","HINT"));
-		
-		//adding to the hard word list
-		hardWord.rewrite(Arrays.asList(new Word("primitive","HINT"),new Word("protected","HINT")));
-		hardWord.append(new Word("assertion","HINT"));
-		
-		
-		
+
+		// adding to the medium word list
+		mediumWord.rewrite(Arrays.asList(new Word("string", "HINT"), new Word("array", "HINT")));
+		mediumWord.append(new Word("append", "HINT"));
+
+		// adding to the hard word list
+		hardWord.rewrite(Arrays.asList(new Word("primitive", "HINT"), new Word("protected", "HINT")));
+		hardWord.append(new Word("assertion", "HINT"));
+
 //FILE TEST
 		hardWord.rewrite(hard);
-		for(Word w : hard) {
-		hardWord.rewrite(hard);
+		for (Word w : hard) {
+			hardWord.rewrite(hard);
 			System.out.println(w);
 		}
-		for(Word w : medium) {
-		hardWord.rewrite(medium);
+		for (Word w : medium) {
+			hardWord.rewrite(medium);
 			System.out.println(w);
 		}
-		for(Word w : easy) {
+		for (Word w : easy) {
 			System.out.println(w);
 		}
 		System.out.println(hardWord.toString());
 		System.out.println(mediumWord);
 		System.out.println(easyWord);
 //END TEST
-		
-		
-		
-		Scanner scnr = new Scanner(System.in);
 
+		Scanner scnr = new Scanner(System.in);
+				
 		String name = Validator.getString(scnr, "Please input your name ");
 		Player newPlayer = new Player(name);
-		System.out.println("Hello " + name + " what difficulty would you like?");
 
-		String hangmanWord = Methods.whichDifficulty();
-		String[] hangmanWordArray = hangmanWord.split("");
-		String[] underscoreArray = new String[hangmanWord.length()];
+		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like?");
+		
+		Word hangmanWord = new Word();
+		
+		if (tempDifficulty.equals("easy")) {
+			hangmanWord = Methods.easyWord(easy);
+		} else if (tempDifficulty.equals("medium")) {
+			hangmanWord = Methods.mediumWord(medium);
+		} else {
+			hangmanWord = Methods.hardWord(hard);
+		}
 
-		for (int i = 0; i < hangmanWord.length(); i++) {
+		String[] hangmanWordArray = hangmanWord.getWord().split("");
+		String[] underscoreArray = new String[hangmanWord.getWord().length()];
+
+		for (int i = 0; i < hangmanWord.getWord().length(); i++) {
 			underscoreArray[i] = "_";
 		}
 
@@ -88,13 +91,18 @@ public class Main {
 		while (!win) {
 
 			String userchoice = Validator.getString(scnr,
-					"Please choose which letter you want to try, or \"quit\" to quit. ");
+					"Please choose which letter you want to try\n\"hint\" for a hint or \"quit\" to quit. ");
 			String checkThischar = userchoice.substring(0);
 
 			// catch the quit out
 			if (userchoice.equals("quit")) {
 				win = true;
 				break;
+			}
+
+			if (userchoice.equals("hint")) {
+				System.out.println(hangmanWord.getHint());
+				continue;
 			}
 
 			// checks to see if the letter guessed
@@ -149,9 +157,9 @@ public class Main {
 			}
 
 		}
-		
+
 		fileHelper.append(newPlayer);
-		
+
 		System.out.println("We made it to the end");
 
 		// add playerscore to highscore
