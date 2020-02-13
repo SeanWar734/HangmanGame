@@ -34,21 +34,21 @@ public class Main {
 		hardWord.append(new Word("assertion", "HINT"));
 
 //FILE TEST
-		hardWord.rewrite(hard);
-		for (Word w : hard) {
-			hardWord.rewrite(hard);
-			System.out.println(w);
-		}
-		for (Word w : medium) {
-			hardWord.rewrite(medium);
-			System.out.println(w);
-		}
-		for (Word w : easy) {
-			System.out.println(w);
-		}
-		System.out.println(hardWord.toString());
-		System.out.println(mediumWord);
-		System.out.println(easyWord);
+//		hardWord.rewrite(hard);
+//		for (Word w : hard) {
+//			hardWord.rewrite(hard);
+//			System.out.println(w);
+//		}
+//		for (Word w : medium) {
+//			hardWord.rewrite(medium);
+//			System.out.println(w);
+//		}
+//		for (Word w : easy) {
+//			System.out.println(w);
+//		}
+//		System.out.println(hardWord.toString());
+//		System.out.println(mediumWord);
+//		System.out.println(easyWord);
 //END TEST
 
 		Scanner scnr = new Scanner(System.in);
