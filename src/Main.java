@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
 
@@ -47,7 +48,7 @@ public class Main {
 //		for (Word w : easy) {
 //			System.out.println(w);
 //		}
-//		System.out.println(hardWord.toString());
+//		System.out.println(hardWord.toString()); 
 //		System.out.println(mediumWord);
 //		System.out.println(easyWord);
 //END TEST
@@ -66,7 +67,7 @@ public class Main {
 
 		Player newPlayer = new Player(name);
 
-		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like?");
+		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like, easy, medium, or hard??");
 
 		Word hangmanWord = new Word();
 
@@ -80,6 +81,7 @@ public class Main {
 
 		String[] hangmanWordArray = hangmanWord.getWord().split("");
 		String[] underscoreArray = new String[hangmanWord.getWord().length()];
+		Stack<String> wrongLetter = new Stack<String>();
 
 		for (int i = 0; i < hangmanWord.getWord().length(); i++) {
 			underscoreArray[i] = "_";
@@ -117,7 +119,7 @@ public class Main {
 
 			// checks to see if the letter guessed
 			// is wrong and adds 1 to wrong
-			Methods.checkIfLoss(userchoice, hangmanWordArray, newPlayer);
+			Methods.checkIfLoss(userchoice, hangmanWordArray, newPlayer, wrongLetter);
 
 			// checks to see if the letter guessed
 			// is right and adds 1 to right
@@ -161,6 +163,7 @@ public class Main {
 			Methods.printArray(underscoreArray);
 			System.out.println("Number wrong: " + newPlayer.getWrong());
 			System.out.println("Number right: " + newPlayer.getCorrect());
+			System.out.println("Wrong letters: " + wrongLetter.toString());
 
 			if (newPlayer.getCorrect() >= numLetters) {
 				win = true;
@@ -170,7 +173,7 @@ public class Main {
 		}
 
 		fileHelper.append(newPlayer);
-
+		player = fileHelper.readAll();
 		try {
 			PlayerScores.highScore(player);
 		} catch (InterruptedException e) {
