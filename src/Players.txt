@@ -1,3 +1,4 @@
 Jill	462	0
 Bill	6	2
 Sean	42	999
+Sam	0	1
