@@ -54,7 +54,9 @@ public class Main {
 
 		Scanner scnr = new Scanner(System.in);
 
+
 		String name = Validator.getUserName(scnr, " is already is use, please choose a different one", player);
+
 		Player newPlayer = new Player(name);
 
 		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like?");
