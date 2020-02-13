@@ -5,16 +5,48 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Validator {
+	
+	private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
 
-	public static String getUserName(Scanner scnr,String prompt){
+	
+//	public static void main(String[] args) {
+//		List<Player> player = fileHelper.readAll();
+//		fileHelper.rewrite(Arrays.asList(new Player("Jill", 462, 0)));
+//		fileHelper.append(new Player("Bill", 6, 2));
+//		fileHelper.append(new Player("Sean", 42, 999));
+//		
+//		Scanner scnr = new Scanner(System.in);
+//		String userName = "";
+//		System.out.println("Please enter a name:");
+//		 userName = getUserName(scnr," is already in use. Please enter a different name.", player);
+//	}
+
+	public static String getUserName(Scanner scnr,String prompt,List<Player> players){
 		String input = "";
+		boolean isTrue = true;
+				
 		do {
-			input = getString(scnr,"");
-			if
-			
-			
-			break;
+			do {
+				input = getString(scnr,"");
+			for(int i = 0; i < players.size(); ++i ) {
+				if(players.get(i).getName().equalsIgnoreCase(input)) {
+					System.out.println(input + prompt);
+					isTrue = false;
+					break;
+				}else {
+					isTrue = true;
+				}
+			}
+			}while(!isTrue);
+			String confirmation = getYesNo(scnr,"You entered " + input + ". Is this correct?");
+			if(confirmation.equalsIgnoreCase("YES")) {
+				break;
+			}else {
+				continue;
+			}
 		}while(true);
+		
+		
 		
 		return input;
 	}
