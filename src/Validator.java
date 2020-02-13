@@ -5,8 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Validator {
-	
-	private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
+//COMMENTED OUT TESTING
+	//private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
 
 	
 //	public static void main(String[] args) {
