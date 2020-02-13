@@ -1,5 +1,6 @@
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +49,8 @@ public interface LineConverter<T> {
 		}
 		return lines;
 	}
+	
+	
 	
 	/**
 	 * Handy method for using {@link #fromLine(String)} to convert a list of lines.
