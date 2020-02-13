@@ -5,18 +5,34 @@ import java.util.Scanner;
 public class Main {
 
 	private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
-	private static FileHelper<Player> easyWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
-	private static FileHelper<Player> mediumWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());	
-	private static FileHelper<Player> hardWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
+	private static FileHelper<String> easyWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
+	private static FileHelper<String> mediumWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());	
+	private static FileHelper<String> hardWord = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
 
 
 	public static void main(String[] arg) {
 
 		List<Player> player = fileHelper.readAll();
-
+		
+		//adding to the Player score text file
 		fileHelper.rewrite(Arrays.asList(new Player("Jill", 462, 0)));
 		fileHelper.append(new Player("Bill", 6, 2));
 		fileHelper.append(new Player("Sean", 42, 999));
+		
+		//adding to the easy word list
+		easyWord.rewrite("hub");
+		easyWord.append("null");
+		easyWord.append("git");
+		
+		//adding to the medium word list
+		mediumWord.rewrite("string");
+		mediumWord.append("array");
+		mediumWord.append("boolean");
+		
+		//adding to the hard word list
+		easyWord.rewrite("primitive");
+		easyWord.append("protected");
+		easyWord.append("assertion");
 
 		Scanner scnr = new Scanner(System.in);
 
