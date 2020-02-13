@@ -35,19 +35,18 @@ public class Main {
 
 		// adding to the hard word list
 		easyWord.rewrite(Arrays.asList(new Word("primitive", "a data type"), new Word("protected", "access modifier")));
-		easyWord.append(new Word("assertion", "uploading to git up"));
+		easyWord.append(new Word("assertion", "uploading to git hub"));
 
 		
 		int playCount = 0;
 		Scanner scnr = new Scanner(System.in);
 
-//		try {
-//			TitleScreen.titleScreen();
-//		} catch (InterruptedException e1) {
-//			e1.printStackTrace();
-//		}
 
-		
+		try {
+			TitleScreen.titleScreen();
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
 
 		System.out.println("Please enter your UserName: ");
 		String name = Validator.getUserName(scnr, " is already is use, please choose a different one", player);
@@ -96,6 +95,7 @@ public class Main {
 			// Starting the main game loop
 			while (!win) {
 	
+
 			String userchoice = Validator.getString(scnr,
 						"Please choose which letter you want to try\n\"hint\" for a hint, or \"quit\" to quit. ");
 			String checkThischar = userchoice.substring(0);
@@ -105,7 +105,13 @@ public class Main {
 				win = true;
 				break;
 			}
-	
+				
+			if (userchoice.equals(hangmanWord.getWord())) {
+				win = true;
+				newPlayer.setWins(1);
+				break;
+			}
+
 			if (userchoice.equals("hint")) {
 				System.out.println(hangmanWord.getHint());
 				continue;

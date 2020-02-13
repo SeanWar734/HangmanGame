@@ -5,6 +5,7 @@ public class HangPerson {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		gameOver();
+		scnr.close();
 		
 	}
 
