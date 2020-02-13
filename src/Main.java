@@ -1,5 +1,6 @@
-import java.util.*;
-
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -21,45 +22,45 @@ public class Main {
 		fileHelper.append(new Player("Sean", 42, 999));
 
 		// adding to the easy word list
-		easyWord.rewrite(Arrays.asList(new Word("hub", "HINT"), new Word("null", "HINT")));
-		easyWord.append(new Word("git", "HINT"));
-		
+		hardWord.rewrite(Arrays.asList(new Word("hub", "Git"), new Word("null", "empty or void")));
+		hardWord.append(new Word("git", "Hub"));
 
 		// adding to the medium word list
-		mediumWord.rewrite(Arrays.asList(new Word("string", "HINT"), new Word("array", "HINT")));
-		mediumWord.append(new Word("append", "HINT"));
+		mediumWord.rewrite(
+				Arrays.asList(new Word("string", "words"), new Word("array", "container of objects that uses []")));
+		mediumWord.append(new Word("append", "adding to something"));
 
 		// adding to the hard word list
-		hardWord.rewrite(Arrays.asList(new Word("primitive", "HINT"), new Word("protected", "HINT")));
-		hardWord.append(new Word("assertion", "HINT"));
+		easyWord.rewrite(Arrays.asList(new Word("primitive", "a data type"), new Word("protected", "access modifier")));
+		easyWord.append(new Word("assertion", "uploading to git up"));
 
 //FILE TEST
-		hardWord.rewrite(hard);
-		for (Word w : hard) {
-			hardWord.rewrite(hard);
-			System.out.println(w);
-		}
-		for (Word w : medium) {
-			hardWord.rewrite(medium);
-			System.out.println(w);
-		}
-		for (Word w : easy) {
-			System.out.println(w);
-		}
-		System.out.println(hardWord.toString());
-		System.out.println(mediumWord);
-		System.out.println(easyWord);
+//		hardWord.rewrite(hard);
+//		for (Word w : hard) {
+//			hardWord.rewrite(hard);
+//			System.out.println(w);
+//		}
+//		for (Word w : medium) {
+//			hardWord.rewrite(medium);
+//			System.out.println(w);
+//		}
+//		for (Word w : easy) {
+//			System.out.println(w);
+//		}
+//		System.out.println(hardWord.toString());
+//		System.out.println(mediumWord);
+//		System.out.println(easyWord);
 //END TEST
 
 		Scanner scnr = new Scanner(System.in);
-				
-		String name = Validator.getString(scnr, "Please input your name ");
+
+		String name = Validator.getUserName(scnr, " is already is use, please choose a different one", player);
 		Player newPlayer = new Player(name);
 
 		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like?");
-		
+
 		Word hangmanWord = new Word();
-		
+
 		if (tempDifficulty.equals("easy")) {
 			hangmanWord = Methods.easyWord(easy);
 		} else if (tempDifficulty.equals("medium")) {
@@ -91,7 +92,7 @@ public class Main {
 		while (!win) {
 
 			String userchoice = Validator.getString(scnr,
-					"Please choose which letter you want to try\n\"hint\" for a hint or \"quit\" to quit. ");
+					"Please choose which letter you want to try\n\"hint\" for a hint, or \"quit\" to quit. ");
 			String checkThischar = userchoice.substring(0);
 
 			// catch the quit out
@@ -154,16 +155,19 @@ public class Main {
 
 			if (newPlayer.getCorrect() >= numLetters) {
 				win = true;
+				newPlayer.setWins(1);
 			}
 
 		}
 
 		fileHelper.append(newPlayer);
 
-		System.out.println("We made it to the end");
+		try {
+			PlayerScores.highScore(player);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
-		// add playerscore to highscore
-		// show highscore method
 		scnr.close();
 	}
 
