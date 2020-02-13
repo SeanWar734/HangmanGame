@@ -1,3 +1,3 @@
-string	HINT
-array	HINT
-append	HINT
+hub	Git
+null	empty or void
+git	Hub
