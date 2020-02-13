@@ -85,6 +85,10 @@ public class Methods {
 		System.out.println();
 	}
 
+<<<<<<< HEAD
+
+	
+=======
 	public static void organizeList(List<Player> players, Player player) {
 		// Comparator.comparing(player, player.getWins());
 //		int wins = players.get(0).getWins();
@@ -106,4 +110,5 @@ public class Methods {
 			j++;
 		}
 	}
+>>>>>>> 6bdbf2363151b5f5e549f9b70d6b3b7a29c4741c
 }
