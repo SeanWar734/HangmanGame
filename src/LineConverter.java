@@ -49,6 +49,8 @@ public interface LineConverter<T> {
 		return lines;
 	}
 	
+	
+	
 	/**
 	 * Handy method for using {@link #fromLine(String)} to convert a list of lines.
 	 * @param lines list of lines to convert to objects
