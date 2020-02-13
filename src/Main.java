@@ -173,7 +173,7 @@ public class Main {
 		}
 
 		fileHelper.append(newPlayer);
-
+		player = fileHelper.readAll();
 		try {
 			PlayerScores.highScore(player);
 		} catch (InterruptedException e) {
