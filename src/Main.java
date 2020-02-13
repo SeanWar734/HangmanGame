@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 public class Main {
 
 	private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
@@ -21,17 +20,16 @@ public class Main {
 		fileHelper.append(new Player("Sean", 42, 999));
 
 		// adding to the easy word list
-		easyWord.rewrite(Arrays.asList(new Word("hub", "HINT"), new Word("null", "HINT")));
-		easyWord.append(new Word("git", "HINT"));
-		
+		hardWord.rewrite(Arrays.asList(new Word("hub", "Git"), new Word("null", "empty or void")));
+		hardWord.append(new Word("git", "Hub"));
 
 		// adding to the medium word list
-		mediumWord.rewrite(Arrays.asList(new Word("string", "HINT"), new Word("array", "HINT")));
-		mediumWord.append(new Word("append", "HINT"));
+		mediumWord.rewrite(Arrays.asList(new Word("string", "words"), new Word("array", "container of objects that uses []")));
+		mediumWord.append(new Word("append", "adding to something"));
 
 		// adding to the hard word list
-		hardWord.rewrite(Arrays.asList(new Word("primitive", "HINT"), new Word("protected", "HINT")));
-		hardWord.append(new Word("assertion", "HINT"));
+		easyWord.rewrite(Arrays.asList(new Word("primitive", "a data type"), new Word("protected", "access modifier")));
+		easyWord.append(new Word("assertion", "uploading to git up"));
 
 //FILE TEST
 //		hardWord.rewrite(hard);
@@ -52,14 +50,14 @@ public class Main {
 //END TEST
 
 		Scanner scnr = new Scanner(System.in);
-				
+
 		String name = Validator.getString(scnr, "Please input your name ");
 		Player newPlayer = new Player(name);
 
 		String tempDifficulty = Validator.getString(scnr, "Hello " + name + " what difficulty would you like?");
-		
+
 		Word hangmanWord = new Word();
-		
+
 		if (tempDifficulty.equals("easy")) {
 			hangmanWord = Methods.easyWord(easy);
 		} else if (tempDifficulty.equals("medium")) {
@@ -161,9 +159,7 @@ public class Main {
 		fileHelper.append(newPlayer);
 
 		System.out.println("We made it to the end");
-
-		// add playerscore to highscore
-		// show highscore method
+		System.out.println();
 		scnr.close();
 	}
 
