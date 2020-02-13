@@ -58,7 +58,6 @@ public class Main {
 		try {
 			TitleScreen.titleScreen();
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
@@ -109,6 +108,12 @@ public class Main {
 			// catch the quit out
 			if (userchoice.equals("quit")) {
 				win = true;
+				break;
+			}
+			
+			if (userchoice.equals(hangmanWord.getWord())) {
+				win = true;
+				newPlayer.setWins(1);
 				break;
 			}
 
