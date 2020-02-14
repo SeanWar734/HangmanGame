@@ -4,7 +4,11 @@ import java.util.*;
 import static java.nio.file.StandardCopyOption.*;
 
 import java.io.IOException;
-
+/**
+ * 
+ * @authors SeanWarchuck JillianCenters BillWilt
+ *
+ */
 public class Main {
 
 	private static FileHelper<Player> fileHelper = new FileHelper<>("src/Players.txt", new PlayerLineConverter());
